@@ -30,3 +30,5 @@ Install insttructions :
 - Install symfony 2.8 with composer "php composer.phar install" <- call this in /var/www/starmadewebmanager
 - wait for composer to install dependencies
 
+
+
