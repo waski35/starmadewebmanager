@@ -80,8 +80,8 @@ admin_serverstatuslog:
 admin_serverstatuslogAjax:
     path: /admin/serverstatus/listAjax
     defaults: {_controller: 'AppBundle\Controller\ServerStatusLogController::listAjaxAction' }    
-admin_servermanage:
-    path: /admin/serverstatus
+admin_server_management:
+    path: /admin/servermanage
     defaults: {_controller: 'AppBundle\Controller\ServerManageController::showAction' }    
 admin_votes:
     path: /admin/vote

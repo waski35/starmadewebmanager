@@ -28,5 +28,51 @@ class ShopController extends Controller
         return $datatable->getSearchResults(Datatable::RESULT_JSON);
         
     }
+    
+    public function detailsAction(Request $request)
+    {
+        $line = $request->query->get('line');
+        
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Shop');
+
+
+        $logs = $repository->findOneBy(
+            array('line' => $line)
+                );
+        
+                
+        $shadow_path = $this->container->getParameter('path_to_shadow');
+        
+        if (!$logs)
+        {
+             throw $this->createNotFoundException('No shop found for id '.$line);
+        }
+        if ($request->getRealMethod() == 'POST')
+        {
+            $do_action = $request->request->get('do_action');
+            $logs_name = $logs->getName();
+            if ($do_action == "Despawn")
+            {
+                // perform action based off name
+                exec($shadow_path.'/shadow.dtsd dosafe "/destroy_uid ENTITY_SHOP_'.$logs_name.'"');
+            }
+            else if ($do_action == "Restock Full")
+            {
+                exec($shadow_path.'/shadow.dtsd dosafe "/shop_restock_full_uid ENTITY_SHOP_'.$logs_name.'"');
+                
+            }
+            else 
+            {
+                // do nothing
+            }
+            
+        }
+        
+        return $this->render('shop/details.html.twig', array(
+            'logs' => $logs,
+        ));
+        
+    }
+    
 }
 

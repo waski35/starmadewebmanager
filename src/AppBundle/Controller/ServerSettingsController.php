@@ -13,9 +13,17 @@ class serverSettingsController extends Controller
      */
     public function showAction(Request $request)
     {
+        $shadow_path = $this->container->getParameter('path_to_shadow');
+        $instance_name = $this->container->getParameter('SM_SRV_instance_name');
+        $instance_port = $this->container->getParameter('SM_SRV_instance_port');
+        $instance_host = $this->container->getParameter('SM_SRV_instance_host');
         
+
         return $this->render('serversettings/show.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+            'shadow' => $shadow_path,
+            'instance_name' => $instance_name,
+            'instance_port' => $instance_port,
+            'instance_host' => $instance_host,
         ));
     }
 }

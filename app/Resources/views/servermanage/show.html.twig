@@ -4,7 +4,7 @@
     <div id="page-wrapper" style="min-height: 650px;">
             <div class="row">
                 <div class="col-lg-12">
-                        <h1 class="page-header">Server Settings - read only - WIP</h1>
+                        <h1 class="page-header">Server Manager</h1>
                 </div>
                     <!-- /.col-lg-12 -->
             </div>
@@ -17,13 +17,15 @@
 
                </thead>
                <tbody>
-                   {#{{ form( '', 'method': 'post')}} #}
-                   <tr><td>Path to Doomsider Shadow</td><td>{{shadow}}</td></tr>
-                   <tr><td>Host Name</td><td>{{ instance_name }}</td></tr>
-                   <tr><td>Server Port</td><td>{{ instance_port }}</td></tr>
-                   <tr><td>Server Host</td><td>{{ instance_host }} </td></tr>
-                   {#<tr><td>Despawn Action</td><td><input type="submit" name="do_action" value="Despawn" class="btn btn-md btn-info"></td></tr>
-                   {{ end_form ()}}    #}
+                   <tr><td>Current Server Status</td><td>{{serverstatus.getStatus()}} - ({{serverstatus.getTime()}})</td></tr>
+                   <tr><td>Start Server</td><td><a href="{{ path("admin_server_management", {"do_action":"start"})}}" class="btn btn-md btn-success"> Start Server Now !</a></td></tr>
+                   <tr><td>Stop Server</td><td><a href="{{ path("admin_server_management", {"do_action":"stop"})}}" class='btn btn-md btn-danger'>Stop Server Now !</a></td></tr>
+                   <tr><td>Restart Server</td><td><a href="{{ path("admin_server_management", {"do_action":"restart"})}}" class='btn btn-md btn-warning'>Restart Server Now !</a></td></tr>
+                   <tr><td>Backup Server Universe</td><td><a href="{{ path("admin_server_management", {"do_action":"backupuni"})}}" class='btn btn-md btn-info'>Backup Server Universe Now !</a></td></tr>
+                   <tr><td>Update Server Binaries</td><td><a href="{{ path("admin_server_management", {"do_action":"updatesrv"})}}" class='btn btn-md btn-info'>Update Server Now !</a></td></tr>
+                   <tr><td>Update Doomsiders Shadow</td><td><a href="{{ path("admin_server_management", {"do_action":"updateshdw"})}}" class='btn btn-md btn-info'>Update Shadow Now !</a></td></tr>
+                       
+                      
                </tbody>
                
            </table>
