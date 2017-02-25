@@ -1,6 +1,10 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+login:
+    path: /login
+    defaults: { _controller : 'AppBundle\Controller\SecurityController::loginAction' }
 
 logout:
     path: /logout
+    
+homepage:
+    path: /
+    defaults: {_controller : 'AppBundle\Controller\DefaultController::indexAction' }
