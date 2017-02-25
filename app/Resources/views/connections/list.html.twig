@@ -2,46 +2,48 @@
 
 {% block body %}
     <div id="page-wrapper" style="min-height: 650px;">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Admin Logs</h1>
-                    </div>
-                    <!-- /.col-lg-12 -->
+            <div class="row">
+                <div class="col-lg-12">
+                        <h1 class="page-header">Connections</h1>
                 </div>
+                <!-- /.col-lg-12 -->
+            </div>
             <!-- /.row -->
             <div class="row">
-                <table class="table" id="adminlogsLog">
-                    <thead>
-                        <th>line</th>
-                        <th>command</th>
-                        <th>name</th>
-                        <th>time</th>
-                    </thead>
-                    <tbody>
-                        
-                    </tbody>
+            <table class="table" id="connLog">
+               <thead>
+                
+                    <th>line</th>
+                    <th>ip</th>
+                    <th>name</th>
+                    <th>status</th>
+                    <th>time</th>
+                </thead>
+               <tbody>
+                   
+               </tbody>
                
-                </table>
-                  
-            
-            
+           </table>    
             </div>
         </div>
     <script>
         $(document).ready(function() {
-                $('#adminlogsLog').DataTable({
+                $('#connLog').DataTable({
                     "bServerSide": true,
-                    "sAjaxSource" : '/admin/adminlogsAjax',
+                    "sAjaxSource" : '/admin/connection/listAjax',
                     "sServerMethod": "POST"
                     },
                     "aoColumns": [
                         { "mData": 'line', 
                             "bSearchable": true,
                             "bSortable": true},
-                        { "mData": 'COMMAND',
+                        { "mData": 'IP',
                             "bSearchable": true,
                             "bSortable": true},
                         { "mData": 'NAME',
+                            "bSearchable": true,
+                            "bSortable": true},
+                        { "mData": 'STATUS',
                             "bSearchable": true,
                             "bSortable": true},
                         { "mData": 'TIME',
@@ -49,7 +51,7 @@
                             "bSortable": true}
                     ]
                 });});
-            
+           
         
             
     </script>

@@ -18,5 +18,14 @@ class PlayerController extends Controller
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
+    
+    public function listAjaxAction(Request $request)
+    {
+        $datatable = $this->get('lankit_datatables')->getDatatable('AppBundle:Player');
+
+    
+        return $datatable->getSearchResults(Datatable::RESULT_JSON);
+        
+    }
 }
 
