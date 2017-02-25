@@ -3,7 +3,19 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Star Made Web Manager{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {% stylesheets
+                '@iggnitionSBAdmin2Bundle/Resources/public/css/bootstrap.min.css'
+                '@iggnitionSBAdmin2Bundle/Resources/public/css/plugins/metisMenu/metisMenu.min.css'
+                '@iggnitionSBAdmin2Bundle/Resources/public/css/sb-admin-2.css'
+                'bundles/iggnitionsbadmin2/font-awesome/css/font-awesome.min.css'
+                output='css/*.css' filter='cssrewrite' %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+        {% endblock %}
+        {% block head_javascripts %}
+        
+        {% endblock %}
+        
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
@@ -144,6 +156,15 @@
 
         {% endblock %}
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {% javascripts
+                '@iggnitionSBAdmin2Bundle/Resources/public/js/jquery.js'
+                '@iggnitionSBAdmin2Bundle/Resources/public/js/bootstrap.min.js'
+                '@iggnitionSBAdmin2Bundle/Resources/public/js/plugins/metisMenu/metisMenu.min.js'
+                '@iggnitionSBAdmin2Bundle/Resources/public/js/sb-admin-2.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+        
+        {% endblock %}
     </body>
 </html>
