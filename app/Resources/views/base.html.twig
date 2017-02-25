@@ -5,10 +5,10 @@
         <title>{% block title %}Star Made Web Manager{% endblock %}</title>
         {% block stylesheets %}
             {% stylesheets
-                '@iggnitionSBAdmin2Bundle/Resources/public/css/bootstrap.min.css'
-                '@iggnitionSBAdmin2Bundle/Resources/public/css/plugins/metisMenu/metisMenu.min.css'
-                '@iggnitionSBAdmin2Bundle/Resources/public/css/sb-admin-2.css'
-                'bundles/iggnitionsbadmin2/font-awesome/css/font-awesome.min.css'
+                'js/vendor/startbootstrap-sb-admin-2/vendor/bootstrap/css/bootstrap.min.css'
+                'js/vendor/startbootstrap-sb-admin-2/vendor/metisMenu/metisMenu.min.css'
+                'js/vendor/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css'
+                'js/vendor/startbootstrap-sb-admin-2/vendor/font-awesome/css/font-awesome.min.css'
                 output='css/*.css' filter='cssrewrite' %}
             <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
         {% endblock %}
@@ -158,10 +158,10 @@
         {% block body %}{% endblock %}
         {% block javascripts %}
             {% javascripts
-                '@iggnitionSBAdmin2Bundle/Resources/public/js/jquery.js'
-                '@iggnitionSBAdmin2Bundle/Resources/public/js/bootstrap.min.js'
-                '@iggnitionSBAdmin2Bundle/Resources/public/js/plugins/metisMenu/metisMenu.min.js'
-                '@iggnitionSBAdmin2Bundle/Resources/public/js/sb-admin-2.js'
+                'js/vendor/startbootstrap-sb-admin-2/vendor/jquery/jquery.js'
+                'js/vendor/startbootstrap-sb-admin-2/vendor/bootstrap/js/bootstrap.min.js'
+                'js/vendor/startbootstrap-sb-admin-2/vendor/metisMenu/metisMenu.min.js'
+                'js/vendor/startbootstrap-sb-admin-2/dist//js/sb-admin-2.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
         
