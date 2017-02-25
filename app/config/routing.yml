@@ -66,3 +66,5 @@ admin_chatlogs:
     path: /admin/chatlogs
     defaults: {_controller: 'AppBundle\Controller\ChatLogsController::listAction' }
     
+    
+    

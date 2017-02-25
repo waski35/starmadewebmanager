@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="page-wrapper" style="min-height: 650px;">
+            <div class="row">
+                <div class="col-lg-12">
+                        <h1 class="page-header">Server Logs</h1>
+                </div>
+                    <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+            <table class="table" id="logsLog">
+               <thead>
+                    
+                    <th>line</th>
+                    <th>logdate</th>
+                    <th>logstring</th>
+
+                </thead>
+               <tbody>
+                  
+               </tbody>
+               
+           </table>  
+            </div>
+        </div>
+    <script>
+        $(document).ready(function() {
+                $('#logsLog').DataTable({
+                    "bServerSide": true,
+                    "sAjaxSource" : '/admin/logsAjax',
+                    "sServerMethod": "POST"
+                    },
+                    "aoColumns": [
+                        { "mData": 'line', 
+                            "bSearchable": true,
+                            "bSortable": true},
+                        { "mData": 'LOGDATE',
+                            "bSearchable": true,
+                            "bSortable": true},
+                        { "mData": 'LOGSTRING',
+                            "bSearchable": true,
+                            "bSortable": true}
+                    ]
+                });});
+        
+        
+            
+    </script>
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
