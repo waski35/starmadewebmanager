@@ -1,6 +1,106 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+login:
+    path: /login
+    defaults: { _controller : 'AppBundle\Controller\SecurityController::loginAction' }
 
 logout:
     path: /logout
+    
+homepage:
+    path: /
+    defaults: {_controller : 'AppBundle\Controller\DefaultController::indexAction' }
+    
+admin_index:
+    path: /admin
+    defaults: { _controller: 'AppBundle\Controller\AdminController::indexAction' }
+admin_players:
+    path: /admin/player
+    defaults: { _controller: 'AppBundle\Controller\PlayerController::listAction' }
+admin_stations:
+    path: /admin/station
+    defaults: {_controller: 'AppBundle\Controller\StationController::listAction' }
+admin_shops:
+    path: /admin/shop
+    defaults: {_controller: 'AppBundle\Controller\ShopController::listAction'}
+admin_asteroids:
+    path: /admin/asteroid
+    defaults: {_controller: 'AppBundle\Controller\AsteroidController::listAction' }
+admin_ships:
+    path: /admin/ship
+    defaults: {_controller: 'AppBundle\Controller\ShipController::listAction' }
+    
+admin_serversettings:
+    path: /admin/server_settings
+    defaults: {_controller: 'AppBundle\Controller\ServerSettingsController::showAction'}
+    
+admin_adminlogs:
+    path: /admin/adminlog
+    defaults: {_controller: 'AppBundle\Controller\AdminLogsController::listAction' }
+admin_adminlogsAjax:
+    path: /admin/adminlog/listAjax
+    defaults: {_controller: 'AppBundle\Controller\AdminLogsController::listAjaxAction' }    
+admin_bounties:
+    path: /admin/bounty
+    defaults: {_controller: 'AppBundle\Controller\BountiesController::listAction' }
+admin_bountiesAjax:
+    path: /admin/bounty/listAjax
+    defaults: {_controller: 'AppBundle\Controller\BountiesController::listAjaxAction' }     
+admin_connections:
+    path: /admin/connection
+    defaults: {_controller: 'AppBundle\Controller\ConnectionsController::listAction' }
+admin_connectionsAjax:
+    path: /admin/connection/listAjax
+    defaults: {_controller: 'AppBundle\Controller\ConnectionsController::listAjaxAction' }    
+admin_destroylog:
+    path: /admin/destroylog
+    defaults: {_controller: 'AppBundle\Controller\DestroyLogController::listAction' }
+admin_destroylogAjax:
+    path: /admin/destroylog/listAjax
+    defaults: {_controller: 'AppBundle\Controller\DestroyLogController::listAjaxAction' }    
+admin_kills:
+    path: /admin/kill
+    defaults: {_controller: 'AppBundle\Controller\KillsController::listAction' }
+admin_killsAjax:
+    path: /admin/kill/listAjax
+    defaults: {_controller: 'AppBundle\Controller\KillsController::listAjaxAction' }    
+admin_logs:
+    path: /admin/log
+    defaults: {_controller: 'AppBundle\Controller\LogsController::listAction' }
+admin_logsAjax:
+    path: /admin/log/listAjax
+    defaults: {_controller: 'AppBundle\Controller\LogsController::listAjaxAction' }    
+admin_sectors:
+    path: /admin/sector
+    defaults: {_controller: 'AppBundle\Controller\SectorsController::listAction' }
+admin_sectorsAjax:
+    path: /admin/sector/listAjax
+    defaults: {_controller: 'AppBundle\Controller\SectorsController::listAjaxAction' }    
+admin_serverstatuslog:
+    path: /admin/serverstatus
+    defaults: {_controller: 'AppBundle\Controller\ServerStatusLogController::listAction' }
+admin_serverstatuslogAjax:
+    path: /admin/serverstatus/listAjax
+    defaults: {_controller: 'AppBundle\Controller\ServerStatusLogController::listAjaxAction' }    
+admin_server_management:
+    path: /admin/servermanage
+    defaults: {_controller: 'AppBundle\Controller\ServerManageController::showAction' }    
+admin_votes:
+    path: /admin/vote
+    defaults: {_controller: 'AppBundle\Controller\VotesController::listAction' }
+admin_votesAjax:
+    path: /admin/vote/listAjax
+    defaults: {_controller: 'AppBundle\Controller\VotesController::listAjaxAction' }    
+admin_smranks:
+    path: /admin/smrank
+    defaults: {_controller: 'AppBundle\Controller\SmRanksController::listAction' }
+admin_smranksAjax:
+    path: /admin/smrank/listAjax
+    defaults: {_controller: 'AppBundle\Controller\SmRanksController::listAjaxAction' }    
+admin_chatlogs:   
+    path: /admin/chatlog
+    defaults: {_controller: 'AppBundle\Controller\ChatLogsController::listAction' }
+admin_chatlogsAjax:   
+    path: /admin/chatlog/listAjax
+    defaults: {_controller: 'AppBundle\Controller\ChatLogsController::listAjaxAction' }    
+    
+    
+    

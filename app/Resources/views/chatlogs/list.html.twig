@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="page-wrapper" style="min-height: 650px;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Chat Logs</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+            <!-- /.row -->
+            <div class="row">
+                <table class="table" id="chatlogsLog">
+                    <thead>
+                        <th>line</th>
+                        <th>chatstring</th>
+                        <th>logdate</th>
+                        <th>reciever</th>
+                        <th>sender</th>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+               
+                </table>
+                  
+            
+            
+            </div>
+        </div>
+    <script>
+        $(document).ready(function() {
+                $('#chatlogsLog').DataTable({
+                    "bServerSide": true,
+                    "sAjaxSource" : '/admin/chatlog/listAjax',
+                    "sServerMethod": "POST"
+                    },
+                    "aoColumns": [
+                        { "mData": 'line', 
+                            "bSearchable": true,
+                            "bSortable": true},
+                        { "mData": 'CHATSTRING',
+                            "bSearchable": true,
+                            "bSortable": true},
+                        { "mData": 'LOGDATE',
+                            "bSearchable": true,
+                            "bSortable": true},
+                        { "mData": 'RECIEVER',
+                            "bSearchable": true,
+                            "bSortable": true},
+                        { "mData": 'SENDER',
+                            "bSearchable": true,
+                            "bSortable": true}
+                    ]
+                });});
+        
+        
+            
+    </script>
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
