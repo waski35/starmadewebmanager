@@ -8,3 +8,61 @@ logout:
 homepage:
     path: /
     defaults: {_controller : 'AppBundle\Controller\DefaultController::indexAction' }
+    
+admin_index:
+    path: /admin
+    defaults: { _controller: 'AppBundle\Controller\AdminController::indexAction' }
+admin_players:
+    path: /admin/player
+    defaults: { _controller: 'AppBundle\Controller\PlayerController::listAction' }
+admin_stations:
+    path: /admin/station
+    defaults: {_controller: 'AppBundle\Controller\StationController::listAction' }
+admin_shops:
+    path: /admin/shop
+    defaults: {_controller: 'AppBundle\Controller\ShopController::listAction'}
+admin_asteroids:
+    path: /admin/asteroid
+    defaults: {_controller: 'AppBundle\Controller\AsteroidController::listAction' }
+admin_ships:
+    path: /admin/ship
+    defaults: {_controller: 'AppBundle\Controller\ShipController::listAction' }
+    
+admin_server_settings:
+    path: /admin/server_settings
+    defaults: {_controller: 'AppBundle\Controller\ServerSettingsController::showAction'}
+    
+admin_adminlogs:
+    path: /admin/adminlogs
+    defaults: {_controller: 'AppBundle\Controller\AdminLogsController::listAction' }
+admin_bounties:
+    path: /admin/bounties
+    defaults: {_controller: 'AppBundle\Controller\BountiesController::listAction' }
+admin_connections:
+    path: /admin/connections
+    defaults: {_controller: 'AppBundle\Controller\ConnectionsController::listAction' }
+admin_destroylog:
+    path: /admin/destroylog
+    defaults: {_controller: 'AppBundle\Controller\DestroyLogController::listAction' }
+admin_kills:
+    path: /admin/kills
+    defaults: {_controller: 'AppBundle\Controller\KillsController::listAction' }
+admin_logs:
+    path: /admin/logs
+    defaults: {_controller: 'AppBundle\Controller\LogsController::listAction' }
+admin_sectors:
+    path: /admin/sectors
+    defaults: {_controller: 'AppBundle\Controller\SectorsController::listAction' }
+admin_serverstatus:
+    path: /admin/serverstatus
+    defaults: {_controller: 'AppBundle\Controller\ServerStatusController::showAction' }
+admin_votes:
+    path: /admin/votes
+    defaults: {_controller: 'AppBundle\Controller\VotesController::listAction' }
+admin_smranks:
+    path: /admin/smranks
+    defaults: {_controller: 'AppBundle\Controller\SmRanksController::listAction' }
+admin_chatlogs:   
+    path: /admin/chatlogs
+    defaults: {_controller: 'AppBundle\Controller\ChatLogsController::listAction' }
+    
