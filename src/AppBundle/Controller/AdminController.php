@@ -58,8 +58,8 @@ class AdminController extends Controller
         return $this->render('admin/index.html.twig', array(
             'destroylog' => $destroyLogs,
             'lastadmin' => $lastAdmin,
-            'votes' => $votesLastMonth->count(),
-            'playersCount' => $playersLastMonth->count(),
+            'votes' => count($votesLastMonth),
+            'playersCount' => count($playersLastMonth),
             'uptime' => '100% - test value',
         ));
     }
