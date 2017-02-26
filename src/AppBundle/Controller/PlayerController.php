@@ -39,12 +39,12 @@ class PlayerController extends Controller
                                 "NAME" => 'x.NAME',
                                 "ONLINE" => 'x.ONLINE',
                                 "RANK" => 'x.RANK',
-                                "Action"=> "x.line"
+                                "_identifier_" => "x.line"
                                 )
                     )
                     ->setRenderers(
                             array(
-                                2 => array(
+                                13 => array(
                                     'view' => 'AppBundle:Renderers:_action_player.html.twig', // Path to the template
                                     'params' => array( // All the parameters you need (same as a twig template)
                                             'edit_route'    => 'admin_players_details'
