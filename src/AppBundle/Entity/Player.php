@@ -16,30 +16,69 @@ class Player
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $BANKCREDITS;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $CONTROLLING;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $CONTROLTYPE;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $CREDITS;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $CURRENTIP;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $CURRENTSECTOR;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $FACTION;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $LASTCORE;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $LASTPOSITION;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $LASTUPDATE;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $NAME;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $ONLINE;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $RANK;
         
     public function getLine()

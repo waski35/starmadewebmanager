@@ -16,14 +16,29 @@ class Sector
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $LASTUPDATE;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $NAME;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $PEACE;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $PROTECTED;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $TYPE;
         
     public function getLine()

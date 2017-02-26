@@ -16,8 +16,14 @@ class ServerStatus
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $STATUS;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $TIME;
     
         

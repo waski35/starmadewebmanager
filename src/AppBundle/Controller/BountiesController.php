@@ -10,9 +10,7 @@ use LanKit\DatatablesBundle\Datatables\DataTable;
 
 class BountiesController extends Controller
 {
-    /**
-     * @Route("/admin/bounty", name="admin_bounties")
-     */
+    
     public function listAction(Request $request)
     {
         

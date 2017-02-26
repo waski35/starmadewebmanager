@@ -10,9 +10,7 @@ use LanKit\DatatablesBundle\Datatables\DataTable;
 
 class LogsController extends Controller
 {
-    /**
-     * @Route("/admin/logs", name="admin_logs")
-     */
+    
     public function listAction(Request $request)
     {
         

@@ -15,20 +15,35 @@ admin_index:
 admin_players:
     path: /admin/player
     defaults: { _controller: 'AppBundle\Controller\PlayerController::listAction' }
+admin_playersAjax:
+    path: /admin/player/listAjax
+    defaults: { _controller: 'AppBundle\Controller\PlayerController::listAjaxAction' }    
 admin_stations:
     path: /admin/station
     defaults: {_controller: 'AppBundle\Controller\StationController::listAction' }
+admin_stationsAjax:
+    path: /admin/station/listAjax
+    defaults: {_controller: 'AppBundle\Controller\StationController::listAjaxAction' }    
 admin_shops:
     path: /admin/shop
     defaults: {_controller: 'AppBundle\Controller\ShopController::listAction'}
+admin_shopsAjax:
+    path: /admin/shop/listAjax
+    defaults: {_controller: 'AppBundle\Controller\ShopController::listAjaxAction'}    
 admin_asteroids:
     path: /admin/asteroid
     defaults: {_controller: 'AppBundle\Controller\AsteroidController::listAction' }
+admin_asteroidsAjax:
+    path: /admin/asteroid/listAjax
+    defaults: {_controller: 'AppBundle\Controller\AsteroidController::listAjaxAction' }    
 admin_ships:
     path: /admin/ship
     defaults: {_controller: 'AppBundle\Controller\ShipController::listAction' }
+admin_shipsAjax:
+    path: /admin/ship/listAjax
+    defaults: {_controller: 'AppBundle\Controller\ShipController::listAjaxAction' }    
     
-admin_serversettings:
+admin_server_settings:
     path: /admin/server_settings
     defaults: {_controller: 'AppBundle\Controller\ServerSettingsController::showAction'}
     

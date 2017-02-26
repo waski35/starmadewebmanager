@@ -16,10 +16,19 @@ class Asteroid
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $CURRENTSECTOR;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $LASTPOSITION;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $NAME;
     
         

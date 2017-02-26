@@ -16,8 +16,14 @@ class Shop
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $CURRENTSECTOR;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $NAME;
         
     public function getLine()

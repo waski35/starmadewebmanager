@@ -16,8 +16,14 @@ class SmRank
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $COMMANDSALLOWED;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $NAME;
         
     public function getLine()

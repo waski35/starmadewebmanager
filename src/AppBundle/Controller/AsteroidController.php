@@ -9,9 +9,7 @@ use LanKit\DatatablesBundle\Datatables\DataTable;
 
 class AsteroidController extends Controller
 {
-    /**
-     * @Route("/admin/asteroid", name="admin_asteroids")
-     */
+    
     public function listAction(Request $request)
     {
         

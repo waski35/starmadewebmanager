@@ -16,12 +16,24 @@ class ChatLog
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $CHATSTRING;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $LOGDATE;
-        
+    
+    /**
+     * @ORM\Column(type="string")
+     */    
     protected $RECIEVER;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $SENDER;
         
     public function getLine()

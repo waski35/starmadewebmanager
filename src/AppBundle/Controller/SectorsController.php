@@ -10,9 +10,7 @@ use LanKit\DatatablesBundle\Datatables\DataTable;
 
 class SectorsController extends Controller
 {
-    /**
-     * @Route("/admin/sector", name="admin_sectors")
-     */
+    
     public function listAction(Request $request)
     {
         

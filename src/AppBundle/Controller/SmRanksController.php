@@ -9,9 +9,7 @@ use LanKit\DatatablesBundle\Datatables\DataTable;
 
 class SmRanksController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
+    
     public function listAction(Request $request)
     {
         

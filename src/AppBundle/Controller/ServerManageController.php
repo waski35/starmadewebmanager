@@ -8,9 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ServerManageController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
+    
     public function showAction(Request $request)
     {
         $do_action = $request->query->get('do_action');

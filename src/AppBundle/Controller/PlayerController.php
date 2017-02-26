@@ -10,9 +10,7 @@ use AppBundle\Entity\Player;
 
 class PlayerController extends Controller
 {
-    /**
-     * @Route("/admin/player", name="admin_player")
-     */
+    
     public function listAction(Request $request)
     {
         

@@ -10,9 +10,7 @@ use LanKit\DatatablesBundle\Datatables\DataTable;
 
 class KillsController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
+    
     public function listAction(Request $request)
     {
         

@@ -4,21 +4,21 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Star Made Web Manager{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" href='js/vendor/startbootstrap-sb-admin-2/vendor/bootstrap/css/bootstrap.css'>
-            <link rel="stylesheet" type="text/css" href='js/vendor/startbootstrap-sb-admin-2/vendor/metisMenu/metisMenu.css'>
-            <link rel="stylesheet" type="text/css" href='js/vendor/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css'>
-            <link rel="stylesheet" type="text/css" href='js/vendor/startbootstrap-sb-admin-2/vendor/morrisjs/morris.css'>
-            <link rel="stylesheet" type="text/css" href='js/vendor/startbootstrap-sb-admin-2/vendor/font-awesome/css/font-awesome.css'>
-            <link rel="stylesheet" type="text/css" href='js/vendor/startbootstrap-sb-admin-2/vendor/datatables/css/jquery.dataTables.css'>
+            <link rel="stylesheet" type="text/css" href="{{asset('js/vendor/startbootstrap-sb-admin-2/vendor/bootstrap/css/bootstrap.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('js/vendor/startbootstrap-sb-admin-2/vendor/metisMenu/metisMenu.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('js/vendor/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('js/vendor/startbootstrap-sb-admin-2/vendor/morrisjs/morris.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('js/vendor/startbootstrap-sb-admin-2/vendor/font-awesome/css/font-awesome.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('js/vendor/startbootstrap-sb-admin-2/vendor/datatables/css/jquery.dataTables.css')}}">
         {% endblock %}
         {% block head_javascripts %}
-            <script type="text/javascript" src='js/vendor/startbootstrap-sb-admin-2/vendor/jquery/jquery.js' ></script>
-            <script type="text/javascript" src='js/vendor/startbootstrap-sb-admin-2/vendor/bootstrap/js/bootstrap.js' ></script>
-            <script type="text/javascript" src='js/vendor/startbootstrap-sb-admin-2/vendor/metisMenu/metisMenu.js' ></script>
-            <script type="text/javascript" src='js/vendor/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js'></script>
-            <script type="text/javascript" src='js/vendor/startbootstrap-sb-admin-2/vendor/raphael/raphael.js'></script>
-            <script type="text/javascript" src='js/vendor/startbootstrap-sb-admin-2/vendor/morrisjs/morris.js'></script>
-            <script type="text/javascript" src='js/vendor/startbootstrap-sb-admin-2/vendor/datatables/js/jquery.dataTables.js'></script>
+            <script type="text/javascript" src="{{asset('js/vendor/startbootstrap-sb-admin-2/vendor/jquery/jquery.js')}}" ></script>
+            <script type="text/javascript" src="{{asset('js/vendor/startbootstrap-sb-admin-2/vendor/bootstrap/js/bootstrap.js')}}" ></script>
+            <script type="text/javascript" src="{{asset('js/vendor/startbootstrap-sb-admin-2/vendor/metisMenu/metisMenu.js')}}" ></script>
+            <script type="text/javascript" src="{{asset('js/vendor/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js')}}"></script>
+            <script type="text/javascript" src="{{asset('js/vendor/startbootstrap-sb-admin-2/vendor/raphael/raphael.js')}}"></script>
+            <script type="text/javascript" src="{{asset('js/vendor/startbootstrap-sb-admin-2/vendor/morrisjs/morris.js')}}"></script>
+            <script type="text/javascript" src="{{asset('js/vendor/startbootstrap-sb-admin-2/vendor/datatables/js/jquery.dataTables.js')}}"></script>
         {% endblock %}
         
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -50,7 +50,7 @@
                         </li>
                         
                         <li class="divider"></li>
-                        <li><a href="{{{{ path('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Log Out</a> 
+                        <li><a href="{{ path('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Log Out</a> 
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -74,44 +74,44 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="{{path('admin_index')}}"><i class="active fa fa-dashboard fa-fw"></i>Home</a>
+                            <a href="{{url('admin_index')}}"><i class="active fa fa-dashboard fa-fw"></i>Home</a>
                         </li>
-                        <li class="">
-                            <a href=""><i class="fa fa-bar-chart-o fa-fw"></i>Manage Server World<span class="fa arrow"></span></a>
+                        <li >
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Manage Server World<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse"  >
                                 <li>
-                                    <a href="{{path('admin_stations')}}"><i class="fa fa-dashboard fa-fw"></i>Stations</a>
+                                    <a href="{{url('admin_stations')}}"><i class="fa fa-dashboard fa-fw"></i>Stations</a>
                             
                                 </li>
                                 <li>
-                                    <a href="{{path('admin_shops')}}"><i class="fa fa-dashboard fa-fw"></i>Shops</a>
+                                    <a href="{{url('admin_shops')}}"><i class="fa fa-dashboard fa-fw"></i>Shops</a>
                                 </li>
                                 <li>
-                                    <a href="{{path('admin_ships')}}"><i class="fa fa-dashboard fa-fw"></i>Ships</a>
+                                    <a href="{{url('admin_ships')}}"><i class="fa fa-dashboard fa-fw"></i>Ships</a>
                                 </li>
                                 <li>
-                                    <a href="{{path('admin_players')}}"><i class="fa fa-dashboard fa-fw"></i>Players</a>
+                                    <a href="{{url('admin_players')}}"><i class="fa fa-dashboard fa-fw"></i>Players</a>
                                 </li>
                                 <li>
-                                    <a href="{{path('admin_asteroids')}}"><i class="fa fa-dashboard fa-fw"></i>Asteroids</a>
+                                    <a href="{{url('admin_asteroids')}}"><i class="fa fa-dashboard fa-fw"></i>Asteroids</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         
                         <li>
-                            <a href=""><i class="fa fa-bar-chart-o fa-fw"></i>Manage Server Instance<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Manage Server Instance<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse"  >
                                 <li>
-                                    <a href="{{url('/admin/servermanage/show')}}"><i class="fa fa-dashboard fa-fw"></i>Server Management</a>
+                                    <a href="{{url('admin_server_management')}}"><i class="fa fa-dashboard fa-fw"></i>Server Management</a>
                                 </li>
                                 <li>
-                                    <a href="{{path('admin_server_settings')}}"><i class="fa fa-dashboard fa-fw"></i>Server Settings</a>
+                                    <a href="{{url('admin_server_settings')}}"><i class="fa fa-dashboard fa-fw"></i>Server Settings</a>
                                 </li>
                             </ul>
                         <!-- logs -->
                         <li>
-                            <a href=""><i class="fa fa-bar-chart-o fa-fw"></i>View Server Logs in Tables<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>View Server Logs in Tables<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse"  >
                                 <li>
                                     <a href="{{url('admin_adminlogs')}}"><i class="fa fa-dashboard fa-fw"></i>Admins Logs</a>
@@ -135,7 +135,7 @@
                                     <a href="{{url('admin_sectors')}}"><i class="fa fa-dashboard fa-fw"></i>Sector Logs</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('admin_serverstatus')}}"><i class="fa fa-dashboard fa-fw"></i>Server Status Logs</a>
+                                    <a href="{{url('admin_serverstatuslog')}}"><i class="fa fa-dashboard fa-fw"></i>Server Status Logs</a>
                                 </li>
                                 <li>
                                     <a href="{{url('admin_votes')}}"><i class="fa fa-dashboard fa-fw"></i>Vote Logs</a>

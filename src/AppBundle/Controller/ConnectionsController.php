@@ -10,9 +10,7 @@ use LanKit\DatatablesBundle\Datatables\DataTable;
 
 class ConnectionsController extends Controller
 {
-    /**
-     * @Route("/admin/connections", name="admin_connections")
-     */
+   
     public function listAction(Request $request)
     {
         

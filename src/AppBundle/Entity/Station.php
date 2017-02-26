@@ -16,26 +16,59 @@ class Station
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $ATTACHED;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $BLOCK;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $CREATOR;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $CURRENTSECTOR;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $DOCKED;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $ENTITYTYPE;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $FACTION;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $LASTCONTROLLER;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $LASTPOSITIONS;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $MASS;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $NAME;
     
     public function getLine()

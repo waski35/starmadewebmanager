@@ -8,9 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class serverSettingsController extends Controller
 {
-    /**
-     * @Route("/admin/serversettings", name="admin_serversettings")
-     */
+    
     public function showAction(Request $request)
     {
         $shadow_path = $this->container->getParameter('path_to_shadow');
