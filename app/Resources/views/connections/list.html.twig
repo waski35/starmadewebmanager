@@ -10,51 +10,14 @@
             </div>
             <!-- /.row -->
             <div class="row">
-            <table class="table" id="connLog">
-               <thead>
-                
-                    <th>line</th>
-                    <th>ip</th>
-                    <th>name</th>
-                    <th>status</th>
-                    <th>time</th>
-                </thead>
-               <tbody>
-                   
-               </tbody>
-               
-           </table>    
+            {{ datatable({
+                    'js' : {
+                        'ajax' : path('admin_connectionsAjax')
+                        }
+                    })
+                }}
             </div>
-        </div>
-    <script>
-        $(document).ready(function() {
-                $('#connLog').DataTable({
-                    "bServerSide": true,
-                    "sAjaxSource" : '/admin/connection/listAjax',
-                    "sServerMethod": "POST"
-                    },
-                    "aoColumns": [
-                        { "mData": 'line', 
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'IP',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'NAME',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'STATUS',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'TIME',
-                            "bSearchable": true,
-                            "bSortable": true}
-                    ]
-                });});
-           
-        
-            
-    </script>
+    </div>
 {% endblock %}
 
 

@@ -10,45 +10,14 @@
             </div>
             <!-- /.row -->
             <div class="row">
-            <table class="table" id="smranksLog">
-               <thead>
-                    
-                    <th>line</th>
-                    <th>commandsallowed</th>
-                    <th>name</th>
-                    
-               </thead>
-               <tbody>
-                   
-               </tbody>
-               
-           </table>
+            {{ datatable({
+                    'js' : {
+                        'ajax' : path('admin_smranksAjax')
+                        }
+                    })
+                }}
             </div>
-        </div>
-    <script>
-        $(document).ready(function() {
-                $('#smranksLog').DataTable({
-                    "bServerSide": true,
-                    "sAjaxSource" : '/admin/smrank/listAjax',
-                    "sServerMethod": "POST"
-                    },
-                    "aoColumns": [
-                        { "mData": 'line', 
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'COMMANDSALLOWED',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'NAME',
-                            "bSearchable": true,
-                            "bSortable": true}
-                    ]
-                });});
-            
-       
-            
-            
-    </script>
+    </div>
 {% endblock %}
 
 

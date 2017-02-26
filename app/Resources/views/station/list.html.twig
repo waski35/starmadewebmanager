@@ -10,87 +10,14 @@
                 </div>
             <!-- /.row -->
             <div class="row">
-            <table class="table" id="stationList">
-               <thead>
-                   
-                    <th>line</th>
-                    <th>attached</th>
-                    <th>block</th>
-                    <th>creator</th>
-                    <th>currentsector</th>
-                    <th>docked</th>
-                    <th>entitytype</th>
-                    <th>faction</th>
-                    <th>lastcontroller</th>
-                    <th>lastposition</th>
-                    <th>mass</th>
-                    <th>name</th>
-                    <th>action</th>
-               </thead>
-               <tbody>
-                   
-               </tbody>
-               
-           </table>
-            </div>
-            </div>
-    <script>
-        $(document).ready(function() {
-                $('#stationList').DataTable({
-                    "bServerSide": true,
-                    "sAjaxSource" : '/admin/station/listAjax',
-                    "sServerMethod": "POST"
-                    },
-                    "aoColumns": [
-                        { "mData": 'line', 
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'ATTACHED',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'BLOCK',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'CREATOR',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'CURRENTSECTOR',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'DOCKED',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'ENTITYTYPE',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'FACTION',
-                            "bSearchable": true,
-                            "bSortable": true},
-                         { "mData": 'LASTCONTROLLER',
-                            "bSearchable": true,
-                            "bSortable": true},
-                         { "mData": 'LASTPOSITION',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'MASS',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'NAME',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData" : 'line',
-                            "mRender": function ( data, type, full ) {
-                                return "<a href='/admin/station/details/"+data+"'>Details</a>";
-                            }
-                            
+            {{ datatable({
+                    'js' : {
+                        'ajax' : path('admin_stationsAjax')
                         }
-                    ]
-                });});
-            
-        
-            
-            
-    </script>
+                    })
+                }}
+            </div>
+    </div>
 {% endblock %}
 
 
