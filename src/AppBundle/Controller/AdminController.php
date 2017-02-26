@@ -27,8 +27,8 @@ class AdminController extends Controller
         $p_query = $em->createQuery(
             'SELECT p
                 FROM AppBundle:Player p
-                WHERE p.RANK = Admiral
-                ORDER BY p.LASTUPDATE DESC');
+                WHERE p.RANK = :rank
+                ORDER BY p.LASTUPDATE DESC')->setParameter('rank', 'Admiral');
         $lastAdmin = $p_query->setMaxResults(1)->getResult();
             
             
@@ -39,8 +39,8 @@ class AdminController extends Controller
         $v_query = $em->createQuery(
             'SELECT v
                 FROM AppBundle:Vote v
-                WHERE v.TIME > "'.$dateMonthAgo.'"
-                ORDER BY v.TIME DESC');
+                WHERE v.TIME > :time
+                ORDER BY v.TIME DESC')->setParameter('time', $dateMonthAgo);
 
         $votesLastMonth = $v_query->getResult();    
             
@@ -48,8 +48,8 @@ class AdminController extends Controller
         $pl_query = $em->createQuery(
             'SELECT pl
                 FROM AppBundle:Player pl
-                WHERE pl.LASTUPDATE > "'.$dateMonthAgo.'"
-                ORDER BY p.LASTUPDATE DESC');
+                WHERE pl.LASTUPDATE > :time
+                ORDER BY p.LASTUPDATE DESC')->setParameter('time', $dateMonthAgo);
         $playersLastMonth = $pl_query->getResult();
         
         
