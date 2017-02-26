@@ -17,31 +17,46 @@ admin_players:
     defaults: { _controller: 'AppBundle\Controller\PlayerController::listAction' }
 admin_playersAjax:
     path: /admin/player/listAjax
-    defaults: { _controller: 'AppBundle\Controller\PlayerController::listAjaxAction' }    
+    defaults: { _controller: 'AppBundle\Controller\PlayerController::listAjaxAction' }
+admin_players_details:
+    path: /admin/player/details
+    defaults: { _controller: 'AppBundle\Controller\PlayerController::detailsAction' }    
 admin_stations:
     path: /admin/station
     defaults: {_controller: 'AppBundle\Controller\StationController::listAction' }
 admin_stationsAjax:
     path: /admin/station/listAjax
-    defaults: {_controller: 'AppBundle\Controller\StationController::listAjaxAction' }    
+    defaults: {_controller: 'AppBundle\Controller\StationController::listAjaxAction' }
+admin_stations_details:
+    path: /admin/station/details
+    defaults: {_controller: 'AppBundle\Controller\StationController::detailsAction' }    
 admin_shops:
     path: /admin/shop
     defaults: {_controller: 'AppBundle\Controller\ShopController::listAction'}
 admin_shopsAjax:
     path: /admin/shop/listAjax
-    defaults: {_controller: 'AppBundle\Controller\ShopController::listAjaxAction'}    
+    defaults: {_controller: 'AppBundle\Controller\ShopController::listAjaxAction'}
+admin_shops_details:
+    path: /admin/shop/details
+    defaults: {_controller: 'AppBundle\Controller\ShopController::detailsAction'}    
 admin_asteroids:
     path: /admin/asteroid
     defaults: {_controller: 'AppBundle\Controller\AsteroidController::listAction' }
 admin_asteroidsAjax:
     path: /admin/asteroid/listAjax
-    defaults: {_controller: 'AppBundle\Controller\AsteroidController::listAjaxAction' }    
+    defaults: {_controller: 'AppBundle\Controller\AsteroidController::listAjaxAction' }
+admin_asteroids_details:
+    path: /admin/asteroid/details
+    defaults: {_controller: 'AppBundle\Controller\AsteroidController::detailsAction' }     
 admin_ships:
     path: /admin/ship
     defaults: {_controller: 'AppBundle\Controller\ShipController::listAction' }
 admin_shipsAjax:
     path: /admin/ship/listAjax
-    defaults: {_controller: 'AppBundle\Controller\ShipController::listAjaxAction' }    
+    defaults: {_controller: 'AppBundle\Controller\ShipController::listAjaxAction' }
+admin_ships_details:
+    path: /admin/ship/details
+    defaults: {_controller: 'AppBundle\Controller\ShipController::detailsAction' }    
     
 admin_server_settings:
     path: /admin/server_settings
@@ -90,10 +105,10 @@ admin_sectorsAjax:
     path: /admin/sector/listAjax
     defaults: {_controller: 'AppBundle\Controller\SectorsController::listAjaxAction' }    
 admin_serverstatuslog:
-    path: /admin/serverstatus
+    path: /admin/serverstatuslog
     defaults: {_controller: 'AppBundle\Controller\ServerStatusLogController::listAction' }
 admin_serverstatuslogAjax:
-    path: /admin/serverstatus/listAjax
+    path: /admin/serverstatuslog/listAjax
     defaults: {_controller: 'AppBundle\Controller\ServerStatusLogController::listAjaxAction' }    
 admin_server_management:
     path: /admin/servermanage

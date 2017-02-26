@@ -10,55 +10,14 @@
             </div>
             <!-- /.row -->
             <div class="row">
-            <table class="table" id="sectorsLog">
-               <thead>
-                   
-                    <th>line</th>
-                    <th>last update</th>
-                    <th>name</th>
-                    <th>peace</th>
-                    <th>protected</th>
-                    <th>type</th>
-               </thead>
-               <tbody>
-                   
-               </tbody>
-               
-           </table>
+            {{ datatable({
+                    'js' : {
+                        'ajax' : path('admin_sectorsAjax')
+                        }
+                    })
+                }}
             </div>
-        </div>       
-    <script>
-        $(document).ready(function() {
-                $('#sectorsLog').DataTable({
-                    "bServerSide": true,
-                    "sAjaxSource" : '/admin/sector/listAjax',
-                    "sServerMethod": "POST"
-                    },
-                    "aoColumns": [
-                        { "mData": 'line', 
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'LASTUPDATE',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'NAME',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'PEACE',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'PROTECTED',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'TYPE',
-                            "bSearchable": true,
-                            "bSortable": true},
-                    ]
-                });});
-        
-        
-            
-    </script>
+    </div>
 {% endblock %}
 
 

@@ -10,47 +10,14 @@
             </div>
             <!-- /.row -->
             <div class="row">
-            <table class="table" id="killsLog">
-               <thead>
-                   
-                    <th>line</th>
-                    <th>killer</th>
-                    <th>killtime</th>
-                    <th>victim</th>
-                </thead>
-               <tbody>
-                   
-               </tbody>
-               
-           </table>   
+            {{ datatable({
+                    'js' : {
+                        'ajax' : path('admin_killsAjax')
+                        }
+                    })
+                }}
             </div>
-        </div>
-    <script>
-        $(document).ready(function() {
-                $('#killsLog').DataTable({
-                    "bServerSide": true,
-                    "sAjaxSource" : '/admin/kill/listAjax',
-                    "sServerMethod": "POST"
-                    },
-                    "aoColumns": [
-                        { "mData": 'line', 
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'KILLER',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'KILLTIME',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'VICTIM',
-                            "bSearchable": true,
-                            "bSortable": true}
-                    ]
-                });});
-        
-        
-            
-    </script>
+    </div>
 {% endblock %}
 
 

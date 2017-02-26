@@ -12,18 +12,53 @@ class ShipController extends Controller
     
     public function listAction(Request $request)
     {
-        
+        $this->datatable();
         return $this->render('ship/list.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
     
+    private function datatable()
+    {
+    $datatable = $this->get('datatable');
+    return $datatable->setEntity("AppBundle:Ship", "x")
+                    ->setFields(
+                            array(
+                                "ID" => 'x.line',
+                                "ATTACHED" => 'x.ATTACHED',
+                                "BLOCK" => 'x.BLOCK',
+                                "CREATOR" => 'x.CREATOR',
+                                "CURRENTSECTOR" => 'x.CURRENTSECTOR',
+                                "DOCKED" => 'x.DOCKED',
+                                "ENTITYTYPE" => 'x.ENTITYTYPE',
+                                "FACTION" => 'x.FACTION',
+                                "LASTCONTROLLER" => 'x.LASTCONTROLLER',
+                                "LASTPOSITION" => 'x.LASTPOSITION',
+                                "LASTUPDATE" => 'x.LASTUPDATE',
+                                "MASS" => 'x.MASS',
+                                "NAME" => 'x.NAME',
+                                "Action" => "x.line",
+                                "_identifier_" => "x.line"
+                                )
+                            
+                    )
+                    ->setRenderers(
+                            array(
+                                13 => array(
+                                    'view' => 'actionship.html.twig', // Path to the template
+                                    'params' => array( // All the parameters you need (same as a twig template)
+                                            'edit_route'    => 'admin_ships_details'
+                                            
+                                        ),
+                                ),
+                            )
+                    )
+                    ->setGlobalSearch(true);
+    }
+    
     public function listAjaxAction(Request $request)
     {
-        $datatable = $this->get('lankit_datatables')->getDatatable('AppBundle:Ship');
-
-    
-        return $datatable->getSearchResults(Datatable::RESULT_JSON);
+        return $this->datatable()->execute(); 
         
     }
     

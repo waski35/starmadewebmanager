@@ -10,44 +10,14 @@
             </div>
             <!-- /.row -->
             <div class="row">
-            <table class="table" id="serverstatusLog">
-               <thead>
-                   
-                    <th>line</th>
-                    <th>status</th>
-                    <th>time</th>
-                    
-               </thead>
-               <tbody>
-                   
-               </tbody>
-               
-           </table>
+            {{ datatable({
+                    'js' : {
+                        'ajax' : path('admin_serverstatuslogAjax')
+                        }
+                    })
+                }}
             </div>
-        </div>     
-    <script>
-        $(document).ready(function() {
-                $('#serverstatusLog').DataTable({
-                    "bServerSide": true,
-                    "sAjaxSource" : '/admin/serverstatus/listAjax',
-                    "sServerMethod": "POST"
-                    },
-                    "aoColumns": [
-                        { "mData": 'line', 
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'STATUS',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'TIME',
-                            "bSearchable": true,
-                            "bSortable": true}
-                    ]
-                });});
-        
-        
-            
-    </script>
+    </div>
 {% endblock %}
 
 

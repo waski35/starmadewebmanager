@@ -10,49 +10,14 @@
             </div>
             <!-- /.row -->
             <div class="row">
-            <table class="table" id="votesLog">
-               <thead>
-                    
-                    <th>line</th>
-                    <th>info</th>
-                    <th>name</th>
-                    <th>time</th>
-                    
-               </thead>
-               <tbody>
-                   
-               </tbody>
-               
-           </table>
+            {{ datatable({
+                    'js' : {
+                        'ajax' : path('admin_votesAjax')
+                        }
+                    })
+                }}
             </div>
-        </div>
-    <script>
-        $(document).ready(function() {
-                $('#votesLog').DataTable({
-                    "bServerSide": true,
-                    "sAjaxSource" : '/admin/vote/listAjax',
-                    "sServerMethod": "POST"
-                    },
-                    "aoColumns": [
-                        { "mData": 'line', 
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'INFO',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'NAME',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'TIME',
-                            "bSearchable": true,
-                            "bSortable": true}
-                    ]
-                });});
-            
-        
-            
-            
-    </script>
+    </div>
 {% endblock %}
 
 

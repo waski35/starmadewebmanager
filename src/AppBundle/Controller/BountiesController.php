@@ -6,25 +6,41 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-use LanKit\DatatablesBundle\Datatables\DataTable;
 
 class BountiesController extends Controller
 {
     
     public function listAction(Request $request)
     {
-        
+        $this->datatable();
         return $this->render('bounties/list.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
     
+    private function datatable()
+    {
+    $datatable = $this->get('datatable');
+    return $datatable->setEntity("AppBundle:Bounty", "x")
+                    ->setFields(
+                            array(
+                                "ID" => 'x.line',
+                                "BOUNTY" => 'x.BOUNTY',
+                                "DEATHS" => 'x.DEATHS',
+                                "KILLEDBY" => 'x.KILLEDBY',
+                                "KILLS" => 'x.KILLS',
+                                "LASTKILL" => 'x.LASTKILL',
+                                "NAME" => 'x.NAME',
+                                "_identifier_" => "x.line"
+                                )
+                            
+                    )
+                    ->setGlobalSearch(true);
+    }
+    
     public function listAjaxAction(Request $request)
     {
-        $datatable = $this->get('lankit_datatables')->getDatatable('AppBundle:Bounty');
-
-    
-        return $datatable->getSearchResults(Datatable::RESULT_JSON);
+        return $this->datatable()->execute();
         
     }   
 }

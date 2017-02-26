@@ -10,46 +10,13 @@
             </div>
          <!-- /.row -->
         <div class="row">
-           <table class="table" id="destroyLog">
-               <thead>
-                
-                    <th>line</th>
-                    <th>type</th>
-                    <th>name</th>
-                    <th>destroytime</th>
-                </thead>
-               <tbody>
-                   
-               </tbody>
-               
-           </table>   
-        </div>
-        </div>
-    <script>
-        $(document).ready(function() {
-                $('#destroyLog').DataTable({
-                    "bServerSide": true,
-                    "sAjaxSource" : '/admin/destroylog/listAjax',
-                    "sServerMethod": "POST"
-                    },
-                    "aoColumns": [
-                        { "mData": 'line', 
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'TYPE',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'NAME',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'DESTROYTIME',
-                            "bSearchable": true,
-                            "bSortable": true}
-                    ]
-                });});
-        
-        
-            
-    </script>
+            {{ datatable({
+                    'js' : {
+                        'ajax' : path('admin_destroylogAjax')
+                        }
+                    })
+                }}
+            </div>
+    </div>
 {% endblock %}
 

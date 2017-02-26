@@ -10,90 +10,14 @@
                 </div>
             <!-- /.row -->
             <div class="row">
-            <table class="table" id="playerList">
-               <thead>
-                   
-                    <th>line</th>
-                    <th>bankcredits</th>
-                    <th>controlling</th>
-                    <th>controltype</th>
-                    <th>credits</th>
-                    <th>currentip</th>
-                    <th>currentsector</th>
-                    <th>faction</th>
-                    <th>lastcore</th>
-                    <th>lastposition</th>
-                    <th>lastupdate</th>
-                    <th>name</th>
-                    <th>online</th>
-                    <th>rank</th>
-                    <th>action</th>
-               </thead>
-               <tbody>
-                   
-               </tbody>
-               
-           </table>
-            </div>
-            </div>
-    <script>
-        $(document).ready(function() {
-                $('#playerList').DataTable({
-                    "bServerSide": true,
-                    "sAjaxSource" : '/admin/player/listAjax',
-                    "sServerMethod": "POST"
-                    },
-                    "aoColumns": [
-                        { "mData": 'line', 
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'BANKCREDITS',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'CONTROLLING',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'CREDITS',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'CURRENTIP',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'CURRENTSECTOR',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'FACTION',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'LASTCORE',
-                            "bSearchable": true,
-                            "bSortable": true},
-                         { "mData": 'LASTPOSITION',
-                            "bSearchable": true,
-                            "bSortable": true},
-                         { "mData": 'LASTUPDATE',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'NAME',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'ONLINE',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'RANK',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData" : 'line',
-                            "mRender": function ( data, type, full ) {
-                                return "<a href='/admin/player/details/"+data+"'>Details</a>";
-                            }
-                            
+            {{ datatable({
+                    'js' : {
+                        'ajax' : path('admin_playersAjax')
                         }
-                    ]
-                });});
-            
-            
-    </script>
+                    })
+                }}
+            </div>
+    </div>
 {% endblock %}
 
 

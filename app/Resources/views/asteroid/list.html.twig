@@ -10,53 +10,14 @@
                 </div>
             <!-- /.row -->
             <div class="row">
-            <table class="table" id="asteroidList">
-               <thead>
-                   
-                    <th>line</th>
-                    <th>currentsector</th>
-                    <th>lastposition</th>
-                    <th>name</th>
-                    <th>action</th>
-               </thead>
-               <tbody>
-                   
-               </tbody>
-               
-           </table>
-            </div>
-            </div>
-    <script>
-        $(document).ready(function() {
-                $('#asteroidList').DataTable({
-                    "bServerSide": true,
-                    "sAjaxSource" : '/admin/asteroid/listAjax',
-                    "sServerMethod": "POST"
-                    },
-                    "aoColumns": [
-                        { "mData": 'line', 
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'CURRENTSECTOR',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'LASTPOSITION',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData": 'NAME',
-                            "bSearchable": true,
-                            "bSortable": true},
-                        { "mData" : 'line',
-                            "mRender": function ( data, type, full ) {
-                                return "<a href='/admin/asteroid/details/"+data+"'>Details</a>";
-                            }
-                            
+            {{ datatable({
+                    'js' : {
+                        'ajax' : path('admin_asteroidsAjax')
                         }
-                    ]
-                });});
-        
-            
-    </script>
+                    })
+                }}
+            </div>
+    </div>
 {% endblock %}
 
 
