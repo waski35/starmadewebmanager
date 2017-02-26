@@ -16,10 +16,19 @@ class AdminLogs
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     private $COMMAND;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     private $NAME;
    
+    /**
+     * @ORM\Column(type="string")
+     */
     private $TIME;
     
         

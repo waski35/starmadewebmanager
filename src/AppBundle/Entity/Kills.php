@@ -16,10 +16,19 @@ class Kills
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $KILLER;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $KILLTIME;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $VICTIM;
 
         

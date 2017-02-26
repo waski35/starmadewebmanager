@@ -16,8 +16,14 @@ class Log
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $LOGDATE;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $LOGSTRING;
     
         

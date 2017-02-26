@@ -16,10 +16,19 @@ class Vote
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $INFO;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $NAME;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $TIME;
     
     public function getLine()

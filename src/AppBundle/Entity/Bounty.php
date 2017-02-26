@@ -16,16 +16,34 @@ class Bounty
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $BOUNTY;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $DEATHS;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $KILLEDBY;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $KILLS;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $LASTKILL;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $NAME;
         
     public function getLine()

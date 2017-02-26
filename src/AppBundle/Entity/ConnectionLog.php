@@ -16,12 +16,24 @@ class ConnectionLog
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $IP;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $NAME;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $STATUS;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $TIME;
     
         
