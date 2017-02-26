@@ -16,10 +16,19 @@ class DestroyLog
      */
     private $line;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $NAME;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $TYPE;
     
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $DESTROYTIME;
     
         
