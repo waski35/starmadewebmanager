@@ -49,7 +49,7 @@ class AdminController extends Controller
             'SELECT pl
                 FROM AppBundle:Player pl
                 WHERE pl.LASTUPDATE > :time
-                ORDER BY p.LASTUPDATE DESC')->setParameter('time', $dateMonthAgo);
+                ORDER BY pl.LASTUPDATE DESC')->setParameter('time', $dateMonthAgo);
         $playersLastMonth = $pl_query->getResult();
         
         
