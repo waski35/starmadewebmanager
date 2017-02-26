@@ -45,7 +45,7 @@ class PlayerController extends Controller
                     ->setRenderers(
                             array(
                                 13 => array(
-                                    'view' => 'AppBundle:renderers:_action_player.html.twig', // Path to the template
+                                    'view' => 'AppBundle:Player:_action_player.html.twig', // Path to the template
                                     'params' => array( // All the parameters you need (same as a twig template)
                                             'edit_route'    => 'admin_players_details'
                                             
