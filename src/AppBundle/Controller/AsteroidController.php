@@ -5,25 +5,51 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use LanKit\DatatablesBundle\Datatables\DataTable;
+
 
 class AsteroidController extends Controller
 {
     
     public function listAction(Request $request)
     {
-        
+        $this->datatable();
         return $this->render('asteroid/list.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
     
+    private function datatable()
+    {
+    $datatable = $this->get('datatable');
+    return $datatable->setEntity("AppBundle:Asteroid", "x")
+                    ->setFields(
+                            array(
+                                "ID" => 'x.line',
+                                "CURRENTSECTOR" => 'x.CURRENTSECTOR',
+                                "LASTPOSITION" => 'x.LASTPOSITION',
+                                "NAME" => 'x.NAME',
+                                "Action" => "x.line",
+                                "_identifier_" => "x.line"
+                                )
+                            
+                    )
+                    ->setRenderers(
+                            array(
+                                4 => array(
+                                    'view' => 'actionasteroid.html.twig', // Path to the template
+                                    'params' => array( // All the parameters you need (same as a twig template)
+                                            'edit_route'    => 'admin_asteroids_details'
+                                            
+                                        ),
+                                ),
+                            )
+                    )
+                    ->setGlobalSearch(true);
+    }
+    
     public function listAjaxAction(Request $request)
     {
-        $datatable = $this->get('lankit_datatables')->getDatatable('AppBundle:Asteroid');
-
-    
-        return $datatable->getSearchResults(Datatable::RESULT_JSON);
+        return $this->datatable()->execute();
         
     }
     

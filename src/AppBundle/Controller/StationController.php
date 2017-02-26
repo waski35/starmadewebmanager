@@ -12,18 +12,52 @@ class StationController extends Controller
     
     public function listAction(Request $request)
     {
-        
+        $this->datatable();
         return $this->render('station/list.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
     
+    private function datatable()
+    {
+    $datatable = $this->get('datatable');
+    return $datatable->setEntity("AppBundle:Station", "x")
+                    ->setFields(
+                            array(
+                                "ID" => 'x.line',
+                                "ATTACHED" => 'x.ATTACHED',
+                                "BLOCK" => 'x.BLOCK',
+                                "CREATOR" => 'x.CREATOR',
+                                "CURRENTSECTOR" => 'x.CURRENTSECTOR',
+                                "DOCKED" => 'x.DOCKED',
+                                "ENTITYTYPE" => 'x.ENTITYTYPE',
+                                "FACTION" => 'x.FACTION',
+                                "LASTCONTROLLER" => 'x.LASTCONTROLLER',
+                                "LASTPOSITION" => 'x.LASTPOSITION',
+                                "MASS" => 'x.MASS',
+                                "NAME" => 'x.NAME',
+                                "Action" => "x.line",
+                                "_identifier_" => "x.line"
+                                )
+                            
+                    )
+                    ->setRenderers(
+                            array(
+                                12 => array(
+                                    'view' => 'actionstation.html.twig', // Path to the template
+                                    'params' => array( // All the parameters you need (same as a twig template)
+                                            'edit_route'    => 'admin_stations_details'
+                                            
+                                        ),
+                                ),
+                            )
+                    )
+                    ->setGlobalSearch(true);
+    }
+    
     public function listAjaxAction(Request $request)
     {
-        $datatable = $this->get('lankit_datatables')->getDatatable('AppBundle:Station');
-
-    
-        return $datatable->getSearchResults(Datatable::RESULT_JSON);
+        return $this->datatable()->execute();
         
     }
     
