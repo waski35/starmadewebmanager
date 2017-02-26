@@ -13,18 +13,52 @@ class PlayerController extends Controller
     
     public function listAction(Request $request)
     {
-        
+        $this->datatable();   
         return $this->render('player/list.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
     
+    private function datatable()
+    {
+    $datatable = $this->get('datatable');
+    return $datatable->setEntity("AppBundle:Player", "x")
+                    ->setFields(
+                            array(
+                                "ID" => 'x.line',
+                                "Bank Credits" => 'x.BANKCREDITS',
+                                "CONTROLLING" => 'x.CONTROLLING',
+                                "CONTROLTYPE" => 'x.CONTROLTYPE',
+                                "CREDITS" => 'x.CREDITS',
+                                "CURRENTIP" => 'x.CURRENTIP',
+                                "CURRENTSECTOR" => 'x.CURRENTSECTOR',
+                                "FACTION" => 'x.FACTION',
+                                "LASTCORE" => 'x.LASTCORE',
+                                "LASTPOSITION" => 'x.LASTPOSITION',
+                                "LASTUPDATE" => 'x.LASTUPDATE',
+                                "NAME" => 'x.NAME',
+                                "ONLINE" => 'x.ONLINE',
+                                "RANK" => 'x.RANK',
+                                "Action"=> "x.line"
+                                )
+                    )
+                    ->setRenderers(
+                            array(
+                                2 => array(
+                                    'view' => 'AppBundle:Renderers:_action_player.html.twig', // Path to the template
+                                    'params' => array( // All the parameters you need (same as a twig template)
+                                            'edit_route'    => 'admin_players_details'
+                                            
+                                        ),
+                                ),
+                            )
+                    )
+                    ->setGlobalSearch(true);
+    }
+    
     public function listAjaxAction(Request $request)
     {
-        $datatable = $this->get('lankit_datatables')->getDatatable('AppBundle:Player');
-
-    
-        return $datatable->getSearchResults(Datatable::RESULT_JSON);
+        return $this->datatable()->execute();  
         
     }
     

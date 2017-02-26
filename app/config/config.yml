@@ -58,4 +58,6 @@ doctrine:
         auto_mapping: true
 
 # Swiftmailer Configuration
-
+waldo_datatable:
+    all:    ~
+    js:     ~
