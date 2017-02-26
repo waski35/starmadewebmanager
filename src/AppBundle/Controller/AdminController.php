@@ -27,7 +27,7 @@ class AdminController extends Controller
         $p_query = $em->createQuery(
             'SELECT p
                 FROM AppBundle:Player p
-                WHERE p.RANK = "Admiral"
+                WHERE p.RANK = Admiral
                 ORDER BY p.LASTUPDATE DESC');
         $lastAdmin = $p_query->setMaxResults(1)->getResult();
             
