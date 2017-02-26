@@ -39,7 +39,7 @@ class PlayerController extends Controller
                                 "NAME" => 'x.NAME',
                                 "ONLINE" => 'x.ONLINE',
                                 "RANK" => 'x.RANK',
-                                "Action" => "",
+                                "Action" => "x.line",
                                 "_identifier_" => "x.line"
                                 )
                     )
