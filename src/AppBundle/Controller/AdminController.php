@@ -13,9 +13,7 @@ use AppBundle\Entity\Vote;
 
 class AdminController extends Controller
 {
-    /**
-     * @Route("/admin, name="admin_index")
-     */
+    
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();

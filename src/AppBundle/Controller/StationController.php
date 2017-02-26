@@ -9,9 +9,7 @@ use LanKit\DatatablesBundle\Datatables\DataTable;
 
 class StationController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
+    
     public function listAction(Request $request)
     {
         

@@ -10,9 +10,7 @@ use LanKit\DatatablesBundle\Datatables\DataTable;
 
 class ChatLogsController extends Controller
 {
-    /**
-     * @Route("/admin/chatlogs", name="admin_chatlogs")
-     */
+    
     public function listAction(Request $request)
     {
         

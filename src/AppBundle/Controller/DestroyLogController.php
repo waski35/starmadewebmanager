@@ -10,9 +10,7 @@ use LanKit\DatatablesBundle\Datatables\DataTable;
 
 class DestroyLogController extends Controller
 {
-    /**
-     * @Route("/admin/destroylog", name="Admin_destroylogs")
-     */
+    
     public function listAction(Request $request)
     {
         
