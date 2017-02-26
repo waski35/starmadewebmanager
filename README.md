@@ -38,10 +38,11 @@ Install insttructions :
 - Install composer in local directory (https://getcomposer.org/download/) ie. /var/www/starmadewebmanager or other web directory form where this page will be served by apache 2
 - Install symfony 2.8 with composer "php composer.phar install" <- call this in /var/www/starmadewebmanager
 - wait for composer to install dependencies,
-- Install project dependencies with bower ("bower install"),
-- Edit "/var/www/starmadewebmanager/app/paramaters.yml" -> lines with database_ (host, dbname, user, password, port) should contain apropirate settings for doomsiders shadow database; 
-  line containing "path_to_shadow" should be filled with directory (absolute system path) where dommsiders shadow main executable "shadow.dtsd" resides without trailing slash
-- 
+- Install project dependencies with bower ("bower install") or ("bower install --allow-root") if running on root account,
+  - if you get error that node has not been found install nodejs-legacy ("sudo apt-get install nodejs-legacy") to fix package naming issues on debian/ubuntu
+- Edit "/var/www/starmadewebmanager/app/parameters.yml" -> lines with database_ (host, dbname, user, password, port) should contain apropirate settings for doomsiders shadow database; 
+  - line containing "path_to_shadow" should be filled with directory (absolute system path) where dommsiders shadow main executable "shadow.dtsd" resides without trailing slash
+- Edit "var/www/starmadewebmanager/app/config.yml" so password for admin user is no longer "secret_admin_password" for security reasons.
 
 
 
