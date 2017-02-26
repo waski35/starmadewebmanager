@@ -43,7 +43,7 @@ admin_shipsAjax:
     path: /admin/ship/listAjax
     defaults: {_controller: 'AppBundle\Controller\ShipController::listAjaxAction' }    
     
-admin_serversettings:
+admin_server_settings:
     path: /admin/server_settings
     defaults: {_controller: 'AppBundle\Controller\ServerSettingsController::showAction'}
     
