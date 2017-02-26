@@ -3,6 +3,8 @@ Starmade Web Manager
 
 Web managemant interface for shadow by doomsider
 
+This software is licensed under GNU GPL 2 license. For terms see : https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
 Requirements :
 
 Linux Server preferably Debian/Ubuntu (Ubuntu Server 14.04.LTS)
