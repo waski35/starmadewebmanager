@@ -59,7 +59,7 @@ class Station
     /**
      * @ORM\Column(type="string")
      */
-    protected $LASTPOSITIONS;
+    protected $LASTPOSITION;
     
     /**
      * @ORM\Column(type="string")

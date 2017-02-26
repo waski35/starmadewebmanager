@@ -105,10 +105,10 @@ admin_sectorsAjax:
     path: /admin/sector/listAjax
     defaults: {_controller: 'AppBundle\Controller\SectorsController::listAjaxAction' }    
 admin_serverstatuslog:
-    path: /admin/serverstatus
+    path: /admin/serverstatuslog
     defaults: {_controller: 'AppBundle\Controller\ServerStatusLogController::listAction' }
 admin_serverstatuslogAjax:
-    path: /admin/serverstatus/listAjax
+    path: /admin/serverstatuslog/listAjax
     defaults: {_controller: 'AppBundle\Controller\ServerStatusLogController::listAjaxAction' }    
 admin_server_management:
     path: /admin/servermanage

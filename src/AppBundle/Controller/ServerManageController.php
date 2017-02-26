@@ -77,7 +77,7 @@ class ServerManageController extends Controller
           
         
         return $this->render('servermanage/show.html.twig', array(
-            'serverstatus' => $lastServerStatus,
+            'serverstatus' => $lastServerStatus[0],
         ));
     }
 }

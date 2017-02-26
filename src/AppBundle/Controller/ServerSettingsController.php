@@ -6,7 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class serverSettingsController extends Controller
+class ServerSettingsController extends Controller
 {
     
     public function showAction(Request $request)
