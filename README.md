@@ -1,7 +1,7 @@
 Starmade Web Manager
 
 
-Web managemant interface for shadow by doomsider
+Web managemant interface for shadow by doomsider providing more elegant and easy way to view and interact with Starmade Dedicated Server Objects in-game.
 
 This software is licensed under GNU GPL 2 license. For terms see : https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
