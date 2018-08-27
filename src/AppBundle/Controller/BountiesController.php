@@ -27,9 +27,9 @@ class BountiesController extends Controller
                                 "ID" => 'x.line',
                                 "BOUNTY" => 'x.BOUNTY',
                                 "DEATHS" => 'x.DEATHS',
-                                "KILLEDBY" => 'x.KILLEDBY',
+                                "KILLED BY" => 'x.KILLEDBY',
                                 "KILLS" => 'x.KILLS',
-                                "LASTKILL" => 'x.LASTKILL',
+                                "LAST KILL" => 'x.LASTKILL',
                                 "NAME" => 'x.NAME',
                                 "_identifier_" => "x.line"
                                 )
