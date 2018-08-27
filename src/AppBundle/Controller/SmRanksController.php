@@ -25,7 +25,7 @@ class SmRanksController extends Controller
                     ->setFields(
                             array(
                                 "ID" => 'x.line',
-                                "COMMANDSALLOWED" => 'x.COMMANDSALLOWED',
+                                "COMMANDS ALLOWED" => 'x.COMMANDSALLOWED',
                                 "NAME" => 'x.NAME',
                                 "_identifier_" => "x.line"
                                 )

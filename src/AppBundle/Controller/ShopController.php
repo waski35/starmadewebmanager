@@ -25,7 +25,7 @@ class ShopController extends Controller
                     ->setFields(
                             array(
                                 "ID" => 'x.line',
-                                "CURRENTSECTOR" => 'x.CURRENTSECTOR',
+                                "CURRENT SECTOR" => 'x.CURRENTSECTOR',
                                 "NAME" => 'x.NAME',
                                 "Action" => "x.line",
                                 "_identifier_" => "x.line"

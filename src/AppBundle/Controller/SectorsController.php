@@ -25,7 +25,7 @@ class SectorsController extends Controller
                     ->setFields(
                             array(
                                 "ID" => 'x.line',
-                                "LASTUPDATE" => 'x.LASTUPDATE',
+                                "LAST UPDATE" => 'x.LASTUPDATE',
                                 "NAME" => 'x.NAME',
                                 "PEACE" => 'x.PEACE',
                                 "PROTECTED" => 'x.PROTECTED',

@@ -25,8 +25,8 @@ class ChatLogsController extends Controller
                     ->setFields(
                             array(
                                 "ID" => 'x.line',
-                                "CHATSTRING" => 'x.CHATSTRING',
-                                "LOGDATE" => 'x.LOGDATE',
+                                "CHAT STRING" => 'x.CHATSTRING',
+                                "LOG DATE" => 'x.LOGDATE',
                                 "RECIEVER" => 'x.RECIEVER',
                                 "SENDER" => 'x.SENDER',
                                 "_identifier_" => "x.line"

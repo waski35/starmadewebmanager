@@ -25,8 +25,8 @@ class AsteroidController extends Controller
                     ->setFields(
                             array(
                                 "ID" => 'x.line',
-                                "CURRENTSECTOR" => 'x.CURRENTSECTOR',
-                                "LASTPOSITION" => 'x.LASTPOSITION',
+                                "CURRENT SECTOR" => 'x.CURRENTSECTOR',
+                                "LAST POSITION" => 'x.LASTPOSITION',
                                 "NAME" => 'x.NAME',
                                 "Action" => "x.line",
                                 "_identifier_" => "x.line"

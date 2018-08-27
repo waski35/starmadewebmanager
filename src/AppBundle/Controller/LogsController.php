@@ -25,8 +25,8 @@ class LogsController extends Controller
                     ->setFields(
                             array(
                                 "ID" => 'x.line',
-                                "LOGDATE" => 'x.LOGDATE',
-                                "LOGSTRING" => 'x.LOGSTRING',
+                                "LOG DATE" => 'x.LOGDATE',
+                                "LOG STRING" => 'x.LOGSTRING',
                                 "_identifier_" => "x.line"
                                 )
                             

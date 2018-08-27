@@ -27,7 +27,7 @@ class DestroyLogController extends Controller
                                 "ID" => 'x.line',
                                 "TYPE" => 'x.TYPE',
                                 "NAME" => 'x.NAME',
-                                "DESTROYTIME" => 'x.DESTROYTIME',
+                                "DESTROY TIME" => 'x.DESTROYTIME',
                                 "_identifier_" => "x.line"
                                 )
                             

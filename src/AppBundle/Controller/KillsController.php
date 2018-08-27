@@ -27,7 +27,7 @@ class KillsController extends Controller
                             array(
                                 "ID" => 'x.line',
                                 "KILLER" => 'x.KILLER',
-                                "KILLTIME" => 'x.KILLTIME',
+                                "KILL TIME" => 'x.KILLTIME',
                                 "VICTIM" => 'x.VICTIM',
                                 "_identifier_" => "x.line"
                                 )
